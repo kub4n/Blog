@@ -17,8 +17,11 @@ class FullPostTransformer extends Resource
         ];
         foreach (LaravelLocalization::getSupportedLocales() as $locale => $supportedLocale) {
             $postData[$locale] = [];
-            foreach ($this->translatedAttributes as $translatedAttribute) {
-                $postData[$locale][$translatedAttribute] = $this->translateOrNew($locale)->$translatedAttribute;
+
+            if ($this->translatedAttributes !== null) {
+                foreach ($this->translatedAttributes as $translatedAttribute) {
+                    $postData[$locale][$translatedAttribute] = $this->translateOrNew($locale)->$translatedAttribute;
+                }
             }
         }
 

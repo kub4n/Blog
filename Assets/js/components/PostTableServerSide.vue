@@ -156,6 +156,7 @@
 
                         this.order_meta.order_by = properties.order_by;
                         this.order_meta.order = properties.order;
+                        console.log(response);
                     });
             },
             fetchData() {

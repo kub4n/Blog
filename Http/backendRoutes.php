@@ -27,7 +27,7 @@ $router->group(['prefix' => '/blog'], function (Router $router) {
         'middleware' => 'can:blog.posts.create',
     ]);
     $router->get('posts/{post}/edit', [
-        'as' => 'admin.blog.post.edit',
+        'as' => 'admin.slider.slide.edit',
         'uses' => 'PostController@edit',
         'middleware' => 'can:blog.posts.edit',
     ]);
